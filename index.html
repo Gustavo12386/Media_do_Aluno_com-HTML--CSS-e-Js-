@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+    function CalculaNota(){
+      var nome = document.getElementById('nome')
+      var nota1 = document.getElementById('n1')
+      var nota2 = document.getElementById('n2')
+      var res = document.getElementById('resposta')
+      var n = String(nome.value)
+      var n1 = Number(nota1.value)
+      var n2 = Number(nota2.value)
+      media = (n1 + n2)/2
+      res.innerHTML = `a media do aluno ${n} é ${media}` 
+
+    }
+    </script>
+</head>
+<body>
+    <form class="form" action="">
+        <div class="card">
+            <div class="card-top">
+                <h2 class="title">Média do Aluno</h2>              
+            </div>
+            <div class="card-group">
+                <label>Nome do Aluno</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
+            </div>
+            <div class="card-group">
+                <label>Nota 1</label>
+                <input type="number" id="n1" name="nota1" placeholder="Digite a primeira nota" required>
+            </div>
+            <div class="card-group">
+                <label>Nota 2</label>
+                <input type="number" id="n2" name="nota2" placeholder="Digite a segunda nota" required>
+            </div>                    
+            <div class="card-group" style="text-align:center">                
+                <button type="submit" name="btn" onclick="CalculaNota()">Calcular nota</button>
+                <div type="number" id="resposta"></div>
+            </div>
+           
+        </div>
+    </form>
+</body>
+</html>
